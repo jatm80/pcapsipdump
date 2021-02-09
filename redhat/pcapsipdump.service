@@ -1,0 +1,21 @@
+[Unit]
+Description=PCAP SIP Dump Server
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=simple
+PIDFile=/run/pcapsipdump.run
+EnvironmentFile=/etc/sysconfig/pcapsipdump
+ExecStart=/usr/sbin/pcapsipdump -f -d $SPOOLDIR -i $DEVICE $PCAP_OPTIONS
+ExecStop=killproc pcapsipdump
+LimitMEMLOCK=infinity
+LimitMSGQUEUE=infinity
+LimitSIGPENDING=infinity
+LimitSTACK=infinity
+User=root
+Group=daemon
+Umask=007
+
+[Install]
+WantedBy=multi-user.target
+

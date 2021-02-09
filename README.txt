@@ -34,3 +34,7 @@ pcapsipdump -r <bulkfile> -d <dir-for-bunch-of-files>
 
 for Red Hat/CentOS/Fedora rpm instructions see redhat/ dir
 for Debian-specific instructions, see debian/ dir
+
+
+ 1434  yum install http://repo.okay.com.mx/centos/7/x86_64/release/okay-release-1-1.noarch.rpm
+ 1435  yum install pcapsipdump
